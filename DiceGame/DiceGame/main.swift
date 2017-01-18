@@ -11,7 +11,7 @@ import Foundation
 
 //MARK: GameBoard Struct
 
-struct gameBoard {
+class gameBoard {
     
     var player : String
     var wins : Int
@@ -23,9 +23,8 @@ struct gameBoard {
     
     init (picks : [Int], player : String ) {
         
-        for pick in picks {
-            self.boardPicks.append(pick) //iterate through the int array passed into the init ad slot them into the struct
-        }
+        self.boardPicks = picks //set the player's pick array to the input int array
+
         
         //set to the dafault of none true before play
         self.boardStatus = [
@@ -40,7 +39,7 @@ struct gameBoard {
     
     
     //run after each roll to check if the player gets to cross off a number, or uncross a number
-    mutating func check(index : Int, rollVal : Int ) {
+     func check(index : Int, rollVal : Int ) {
         
         if self.boardPicks[index] == rollVal {
             self.boardStatus[index] = !self.boardStatus[index]
@@ -49,8 +48,8 @@ struct gameBoard {
     }
     
     //run at end of round to get a players finishing count
-    mutating func tally() {
-        for index in 0...4 { //iterate through 5 indicies
+     func tally() {
+        for (index, pick) in self.boardPicks.enumerated() { //iterate through 5 indicies
             
             if self.boardStatus[index] == false { //check if the value at a given index has been crossed out, or uncrossed, or whatnot
                 self.score += self.boardPicks[index] //if the value is in play, add it to the final tally for that round
@@ -59,7 +58,7 @@ struct gameBoard {
     }
     
     //run at end of round to re-pick and play again. will need to create a new array of picks to input
-    mutating func refresh(picks : [Int]) {
+     func refresh(picks : [Int]) {
         
         self.score = 0
         self.boardPicks = []
@@ -75,6 +74,36 @@ struct gameBoard {
 
 
 //MARK: Global Input Variables
+
+var playerCount : Int
+
+var inPicks : [Int]
+
+var success : Bool
+
+//MARK: Poll Input
+
+
+success = false //set input iteration control to default of false
+
+repeat {
+    var player
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+} while (!success)
+
+
+
 
 
 
