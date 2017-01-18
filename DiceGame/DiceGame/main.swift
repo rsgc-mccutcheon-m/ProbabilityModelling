@@ -39,12 +39,13 @@ class gameBoard {
     
     
     //run after each roll to check if the player gets to cross off a number, or uncross a number
-     func check(index : Int, rollVal : Int ) {
+     func check(rollVal : Int ) {
+        for (index, pick) in self.boardPicks.enumerated() {
         
-        if self.boardPicks[index] == rollVal {
+            if pick == rollVal {
             self.boardStatus[index] = !self.boardStatus[index]
         }
-        
+        }
     }
     
     //run at end of round to get a players finishing count
@@ -52,7 +53,7 @@ class gameBoard {
         for (index, pick) in self.boardPicks.enumerated() { //iterate through 5 indicies
             
             if self.boardStatus[index] == false { //check if the value at a given index has been crossed out, or uncrossed, or whatnot
-                self.score += self.boardPicks[index] //if the value is in play, add it to the final tally for that round
+                self.score += pick //if the value is in play, add it to the final tally for that round
             }
         }
     }
@@ -66,9 +67,7 @@ class gameBoard {
             false, false, false, false, false
         ]
         
-        for pick in picks {
-            self.boardPicks.append(pick)
-        }
+        self.boardPicks = picks
     }
 }
 
