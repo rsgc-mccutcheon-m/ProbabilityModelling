@@ -15,7 +15,9 @@ import Foundation
 
 //MARK: Global Input Variables
 
-var playerCount : Int
+var playerCount : Int = 0
+
+var players : [gameBoard]
 
 var inPicks : [Int]
 
@@ -23,23 +25,49 @@ var success : Bool
 
 var promptCount = "Please specify the desired number of players as an integer:  "
 
+var promptName = "Please input your name: "
+
+var promptPick = "Please input an integer between 1 and 12:  "
+
 //MARK: Poll Input
 
 
-success = false //set input iteration control to default of false
 
 repeat {
-    
     print(promptCount)
     
-    success = true
-    guard let playerCount = readLine(strippingNewline: true) else {
-    success = false
+    if let plyrCnt = readLine(strippingNewline: true) {
+        
+        if let plyrCnt = Int(plyrCnt) {
+            
+            if plyrCnt > 0 && plyrCnt < 6 {
+                
+                playerCount = plyrCnt
+            }
+        }
     }
-    
-} while (!success)
+} while (playerCount == 0)
+
+
 
 for index in 0...(playerCount-1) {
+    
+    var playerName : String
+   
+    repeat {
+        print(promptName)
+        
+        if let plyrCnt = readLine(strippingNewline: true) {
+            
+            if let plyrCnt = Int(plyrCnt) {
+                
+                if plyrCnt > 0 && plyrCnt < 6 {
+                    
+                    playerCount = plyrCnt
+                }
+            }
+        }
+    } while (playerCount == 0)
     
     
     
