@@ -52,23 +52,40 @@ repeat {
 
 for index in 0...(playerCount-1) {
     
-    var playerName : String
+    inPicks = []
+    
+    var playerName : String = "X"
    
     repeat {
         print(promptName)
         
-        if let plyrCnt = readLine(strippingNewline: true) {
+        if let plyrNm = readLine(strippingNewline: true) {
+            playerName = plyrNm
+        
+        }
+    } while (playerName == "X")
+    
+    for index in 0...4 {
+    
+    repeat {
+        print(promptPick)
+        
+        success = false
+        
+        if let plyrPk = readLine(strippingNewline: true) {
             
-            if let plyrCnt = Int(plyrCnt) {
+            if let plyrPk = Int(plyrPk) {
                 
-                if plyrCnt > 0 && plyrCnt < 6 {
+                if plyrPk > 0 && plyrPk < 13 {
                     
-                    playerCount = plyrCnt
+                    success = true
+                    inPicks.append(plyrPk)
                 }
             }
         }
-    } while (playerCount == 0)
-    
+    } while (!success)
+   
+    }
     
     
     
