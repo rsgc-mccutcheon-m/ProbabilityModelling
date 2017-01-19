@@ -28,7 +28,7 @@ class dice {
     //return a random int that is a member of the set of face values
     func roll() -> Int {
     
-    var rollVal = Int(arc4random_uniform(UInt32(self.faces)))
+    let rollVal = Int(arc4random_uniform(UInt32(self.faces)))
     
     //store the roll value in case it needs to be recalled later
     lastRoll = rollVal
