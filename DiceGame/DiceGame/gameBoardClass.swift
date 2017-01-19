@@ -47,6 +47,7 @@ class gameBoard {
     
     //run at end of round to get a players finishing count
     func tally() {
+        score = 0
         for (index, pick) in self.boardPicks.enumerated() { //iterate through 5 indicies
             
             if self.boardStatus[index] == false { //check if the value at a given index has been crossed out, or uncrossed, or whatnot
