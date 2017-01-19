@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F6868DC1E2FDC8A001160A3 /* gameBoardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6868DB1E2FDC8A001160A3 /* gameBoardClass.swift */; };
+		3FB6D86A1E316D02006DE8B4 /* diceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6D8691E316D02006DE8B4 /* diceClass.swift */; };
 		3FC551E11E2D5852009D9F95 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC551E01E2D5852009D9F95 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		3F6868DB1E2FDC8A001160A3 /* gameBoardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameBoardClass.swift; sourceTree = "<group>"; };
+		3FB6D8691E316D02006DE8B4 /* diceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diceClass.swift; sourceTree = "<group>"; };
 		3FC551DD1E2D5852009D9F95 /* DiceGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DiceGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC551E01E2D5852009D9F95 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 			children = (
 				3FC551E01E2D5852009D9F95 /* main.swift */,
 				3F6868DB1E2FDC8A001160A3 /* gameBoardClass.swift */,
+				3FB6D8691E316D02006DE8B4 /* diceClass.swift */,
 			);
 			path = DiceGame;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC551E11E2D5852009D9F95 /* main.swift in Sources */,
+				3FB6D86A1E316D02006DE8B4 /* diceClass.swift in Sources */,
 				3F6868DC1E2FDC8A001160A3 /* gameBoardClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,23 +15,26 @@ import Foundation
 
 //MARK: Global Input Variables
 
-var playerCount : Int = 0
+var playerCount : Int = 0 //holds the # of players desired, currently limmited to 5 for no particular reason
 
-var players : [gameBoard]
+var players : [gameBoard] = [] //holds each of the player scorecards, which track wins, picks, and round scoring info
 
-var inPicks : [Int]
+var playerName : String //will temporarily hold an input player name before it is dumped into a gameBoard instance
 
-var success : Bool
+var inPicks : [Int] //will temporarily hold an input set of 5 picked numbers before it is dumped into a gameBoard instance
 
-var promptCount = "Please specify the desired number of players as an integer:  "
+var success : Bool //used in input control logic
+
+//set of prompt text strings
+var promptCount = "Please specify the desired number of players as an integer: "
 
 var promptName = "Please input your name: "
 
 var promptPick = "Please input an integer between 1 and 12:  "
 
+
+
 //MARK: Poll Input
-
-
 
 repeat {
     print(promptCount)
@@ -49,12 +52,11 @@ repeat {
 } while (playerCount == 0)
 
 
-
 for index in 0...(playerCount-1) {
     
     inPicks = []
     
-    var playerName : String = "X"
+    playerName = "X"
    
     repeat {
         print(promptName)
@@ -65,7 +67,7 @@ for index in 0...(playerCount-1) {
         }
     } while (playerName == "X")
     
-    for index in 0...4 {
+    while inPicks.count != 5 {
     
     repeat {
         print(promptPick)
@@ -87,11 +89,12 @@ for index in 0...(playerCount-1) {
    
     }
     
+    var tempBoard = gameBoard(picks: inPicks, player: playerName)
     
-    
-    
-    
+    players.append(tempBoard)
 }
+
+
 
 
 
