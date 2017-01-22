@@ -8,9 +8,9 @@
 
 import Foundation
 
-class gameBoard {
+class player {
     
-    var player : String
+    var name : String
     var wins : Int
     var boardPicks = [Int]() //store 5 chosen game board values to check against
     var boardStatus = [Bool]() //store the status of the five game spaces
@@ -28,7 +28,7 @@ class gameBoard {
             false, false, false, false, false
         ]
         
-        self.player = player //set player name to the String passed in the init
+        self.name = player //set player name to the String passed in the init
         self.wins = 0 //set wins to default of 0 to begin
         self.score = 0
         

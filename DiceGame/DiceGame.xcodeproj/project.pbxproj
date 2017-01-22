@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0790E11E3543E0002ED1CC /* DiceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0790E01E3543E0002ED1CC /* DiceGame.swift */; };
 		3F6868DC1E2FDC8A001160A3 /* gameBoardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6868DB1E2FDC8A001160A3 /* gameBoardClass.swift */; };
 		3FB6D86A1E316D02006DE8B4 /* diceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6D8691E316D02006DE8B4 /* diceClass.swift */; };
-		3FB6D86C1E317B85006DE8B4 /* diceGameFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6D86B1E317B85006DE8B4 /* diceGameFuncs.swift */; };
 		3FC551E11E2D5852009D9F95 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC551E01E2D5852009D9F95 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,9 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F0790E01E3543E0002ED1CC /* DiceGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceGame.swift; sourceTree = "<group>"; };
 		3F6868DB1E2FDC8A001160A3 /* gameBoardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameBoardClass.swift; sourceTree = "<group>"; };
 		3FB6D8691E316D02006DE8B4 /* diceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diceClass.swift; sourceTree = "<group>"; };
-		3FB6D86B1E317B85006DE8B4 /* diceGameFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diceGameFuncs.swift; sourceTree = "<group>"; };
 		3FC551DD1E2D5852009D9F95 /* DiceGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DiceGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC551E01E2D5852009D9F95 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				3FC551E01E2D5852009D9F95 /* main.swift */,
-				3FB6D86B1E317B85006DE8B4 /* diceGameFuncs.swift */,
+				3F0790E01E3543E0002ED1CC /* DiceGame.swift */,
 				3F6868DB1E2FDC8A001160A3 /* gameBoardClass.swift */,
 				3FB6D8691E316D02006DE8B4 /* diceClass.swift */,
 			);
@@ -129,7 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB6D86C1E317B85006DE8B4 /* diceGameFuncs.swift in Sources */,
+				3F0790E11E3543E0002ED1CC /* DiceGame.swift in Sources */,
 				3FC551E11E2D5852009D9F95 /* main.swift in Sources */,
 				3FB6D86A1E316D02006DE8B4 /* diceClass.swift in Sources */,
 				3F6868DC1E2FDC8A001160A3 /* gameBoardClass.swift in Sources */,
