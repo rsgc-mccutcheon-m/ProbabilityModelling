@@ -47,15 +47,6 @@ for Index in 0...players.count-1 {
     scores.append(players[Index].score)
 }
 
-scores.sort(by: >)
-
-for player in players {
-    
-    if player.score == scores[0] {
-        
-        player.wins += 1
-    }
-}
 
 
 
