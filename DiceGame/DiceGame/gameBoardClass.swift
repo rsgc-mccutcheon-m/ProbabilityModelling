@@ -31,9 +31,7 @@ class player {
         self.name = player //set player name to the String passed in the init
         self.wins = 0 //set wins to default of 0 to begin
         self.score = 0
-        
     }
-    
     
     //run after each roll to check if the player gets to cross off a number, or uncross a number
     func check(rollVal : Int ) {
