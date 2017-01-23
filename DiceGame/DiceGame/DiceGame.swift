@@ -88,7 +88,8 @@ class DiceGame {
     
     
     func inputPlayerPicks() -> [player] {
-        
+        var playerNames : [String] = []
+        var playerPicks : [Int] = []
         
         //Acquire the desired number of players
         var success : Bool = false
@@ -113,53 +114,63 @@ class DiceGame {
             }
         } while(!success)
         
+        playerNames = getNames()
+        
+        playerPicks = getPicks()
         
         
     }
     
-    func getPicks() {
-        //Get the choices for each player
+    func getPicks() -> [Int] {
+        var success : Bool
+        var playerPicks : [Int] = []
+        
+        print("We will now input your 5 dice roll picks")
+        //loop 5 times for the 5 elements in the pick array
+        for marker in 0...4{
+            
+            //get an individual pick between 0 and 12
+            success = false
+            repeat {
+                print("Please input an integer representing your space \(marker) pick")
+                if let inStr = readLine(strippingNewline: true) {
+                    if let inPick : Int = Int(inStr) {
+                        
+                        if inPick > 0 && inPick <= 12 {
+                            success = true
+                            playerPicks.append(inPick)
+                        }
+                    }
+                }
+            } while (!success)
+            
+        }
+        return playerPicks
+    }
+    
+    
+    func getNames() -> [String] {
+        var names : [String] = []
         for index in 0...self.playerCount-1 {
             var playerName : String = "~"
-            var playerPicks : [Int] = []
             var inString : String
-            var success : Bool
             
             repeat {
                 print("Player \(index) please input your name")
                 if let inString = readLine(strippingNewline: true) {
                     
                     playerName = inString
+                    names.append(playerName)
                     
                 }
             } while (playerName == "~")
             
-            success = false
-            print("\(playerName) We will now input your 5 dice roll picks")
-            for marker in 0...4{
-                repeat {
-                   print("Please input an integer representing your space \(marker) pick")
-                    if let inStr = readLine(strippingNewline: true)
-                    
-                    
-                    
-                } while (!success)
-                
-                
-                
-                
-                
-                
-            }
         }
+        
+        return names
     }
     
     
-    func runStrats(){
-        
-        
-        
-    }
     
 }
 
