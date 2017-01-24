@@ -57,12 +57,35 @@ class DiceGame {
                 Player.wins += 1
                 self.winningHands.append(Player.boardPicks)            }
         }
-        
-        
-        
-        
-        
     }
+    
+    func promptRound() -> Bool{
+        print("Would you like to play another round?")
+        
+        var ret : Bool? = nil
+        var inString : String = "X"
+        repeat{
+            if let inStr = readLine(strippingNewline: true){ //strip the response string
+                inString = inStr //put it into a variable instead of a constant
+                if inString == "yes" { //check if they responded game, true return value will be used to trigger other logic
+                    ret = true
+                    
+                } else if inString == "no" { //check if they responded strats, false return value will be used to trigger other logic
+                    ret = false
+                    
+                } else {
+                    print("Please respond with either: yes, or no")
+                    inString = "X" //if the response is neither, keep looping, and re-prompt
+                    
+                }
+                
+            }
+        } while (inString == "X")
+    return ret!
+    
+    }
+    
+    
     
     func promptPlay() -> Bool? {
         print("Would you like to play a game of Dice, or test the effectiveness of strategies? (Respond: game or strats")

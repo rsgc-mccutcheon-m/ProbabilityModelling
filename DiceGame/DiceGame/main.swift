@@ -13,10 +13,23 @@ import Foundation
 var Game  = DiceGame()
 var mode : Bool
 
-
 mode = Game.promptPlay()!
 
 if mode {
+    Game.getCount()
+    Game.players = Game.inputPlayerPicks()
+    Game.playRound()
+    
+    while (Game.promptRound()) {
+        for Player in Game.players {
+            Player.refresh(picks: Game.getPicks(name: Player.name))
+        }
+        Game.playRound()
+        
+    }
+} else{
+    
+    
     
     
     
