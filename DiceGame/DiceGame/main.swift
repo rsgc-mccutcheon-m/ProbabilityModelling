@@ -10,7 +10,18 @@ import Foundation
 
 
 //MARK: GameBoard Class Init
+var Game  = DiceGame()
+var mode : Bool
 
+
+mode = Game.promptPlay()!
+
+if mode {
+    
+    
+    
+    
+}
 
 
 //MARK: Global Input Variables

@@ -57,6 +57,11 @@ class DiceGame {
                 Player.wins += 1
                 self.winningHands.append(Player.boardPicks)            }
         }
+        
+        
+        
+        
+        
     }
     
     func promptPlay() -> Bool? {
@@ -87,9 +92,8 @@ class DiceGame {
     }
     
     
-    func inputPlayerPicks() -> [player] {
-        var playerNames : [String] = []
-        var playerPicks : [Int] = []
+    
+    func getCount() {
         
         //Acquire the desired number of players
         var success : Bool = false
@@ -114,18 +118,37 @@ class DiceGame {
             }
         } while(!success)
         
+    }
+    
+    
+    
+    
+    func inputPlayerPicks() -> [player] {
+        var playerNames : [String] = []
+        var playerPicks : [Int] = []
+        var tempPlayers : [player] = []
+        
+        
         playerNames = getNames()
         
-        playerPicks = getPicks()
+        for (Index, name) in playerNames.enumerated() {
+        playerPicks = getPicks(name: name)
+        var tempPlayer = player(picks: playerPicks, player: name)
+        tempPlayers.append(tempPlayer)
+        }
         
+        return tempPlayers
         
     }
     
-    func getPicks() -> [Int] {
+    
+    
+    
+    func getPicks(name: String?) -> [Int] {
         var success : Bool
         var playerPicks : [Int] = []
         
-        print("We will now input your 5 dice roll picks")
+        print("\(name) We will now input your 5 dice roll picks")
         //loop 5 times for the 5 elements in the pick array
         for marker in 0...4{
             
@@ -147,6 +170,9 @@ class DiceGame {
         }
         return playerPicks
     }
+    
+    
+    
     
     
     func getNames() -> [String] {
