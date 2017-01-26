@@ -38,6 +38,7 @@ class DiceGame {
                 
                 Player.check(rollVal: roll)
                 Player.tally()
+                print("The Roll is \(roll)")
                 print(Player.name)
                 print("Your current tally is \(Player.score)") //show each player their current score
                 
@@ -88,7 +89,7 @@ class DiceGame {
     
     
     func promptPlay() -> Bool? {
-        print("Would you like to play a game of Dice, or test the effectiveness of strategies? (Respond: game or strats")
+        print("Would you like to play a game of Dice, or test the effectiveness of strategies? (Respond: game or strats)")
         var ret : Bool? = nil
         var inString : String = "X"
         repeat{
@@ -112,6 +113,24 @@ class DiceGame {
         } while (inString == "X")
         
         return ret
+    }
+    
+    
+    
+    func endGame() {
+        var winCount : [Int] = []
+        
+        for Player in self.players {
+        winCount.append(Player.wins)
+        }
+        
+        winCount = winCount.sorted(by: > )
+        
+        for Player in self.players {
+            if winCount[0] == Player.wins {
+                print("\(Player.name) won the game with a total of \(Player.wins) Wins!!!")
+            }
+        }
     }
     
     
@@ -178,7 +197,7 @@ class DiceGame {
             //get an individual pick between 0 and 12
             success = false
             repeat {
-                print("Please input an integer representing your space \(marker) pick")
+                print("Please input an integer (2-12) representing your space \(marker) pick")
                 if let inStr = readLine(strippingNewline: true) {
                     if let inPick : Int = Int(inStr) {
                         
@@ -217,6 +236,18 @@ class DiceGame {
         }
         
         return names
+    }
+    
+    
+    func promptStrats(){
+        print("We will now input the number of simulated scorecards you would like to run")
+        self.getCount()
+        
+        print("We will now input the names of the scorecards to be simulated, and the values they contain")
+        self.players = self.inputPlayerPicks()
+        
+
+    
     }
     
     

@@ -26,8 +26,11 @@ if mode {
         }
         Game.playRound()
     }
+    
+    Game.endGame()
 } else{
     
+    Game.promptStrats()
     
     
     
