@@ -25,7 +25,6 @@ if mode {
             Player.refresh(picks: Game.getPicks(name: Player.name))
         }
         Game.playRound()
-        
     }
 } else{
     

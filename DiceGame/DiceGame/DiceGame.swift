@@ -53,7 +53,7 @@ class DiceGame {
         for Player in players {
             //check who has the score in the position sorted to the greatest. this method allows for ties
             if Player.score == scores[0] {
-                
+                print("\(Player.name) wins the round")
                 Player.wins += 1
                 self.winningHands.append(Player.boardPicks)            }
         }
