@@ -18,6 +18,8 @@ class DiceGame {
     var die1 : dice = dice(faces: 6, ID: "dieOne")
     var die2 : dice = dice(faces: 6, ID: "dieTwo")
     
+    var roundCount : Int = 0
+    
     init() {
         
         self.playerCount = 0
@@ -246,11 +248,31 @@ class DiceGame {
         print("We will now input the names of the scorecards to be simulated, and the values they contain")
         self.players = self.inputPlayerPicks()
         
+        print("Please input the number of rounds you would like to simulate")
+        
+        var success : Bool = false
+        repeat {
+            print("Input an integer representing the desired number of rounds (1-300)")
+            if let inCountstr = readLine(strippingNewline: true) {
+                
+                if let inCount : Int = Int(inCountstr){
+                    
+                    if inCount > 0 && inCount <= 10 {
+                        
+                        self.roundCount = inCount
+                        success = true
+                        
+                    } else {
+                        print("Please input an integer 1-300")
+                    }
+                    
+                } else {
+                    print("Please input an integer 1-300")
+                }
+            }
+        } while(!success)
 
-    
     }
-    
-    
     
 }
 
