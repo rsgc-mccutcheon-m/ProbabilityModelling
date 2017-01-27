@@ -257,7 +257,7 @@ class DiceGame {
                 
                 if let inCount : Int = Int(inCountstr){
                     
-                    if inCount > 0 && inCount <= 10 {
+                    if inCount > 0 && inCount <= 300 {
                         
                         self.roundCount = inCount
                         success = true

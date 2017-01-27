@@ -32,7 +32,7 @@ if mode {
     
     Game.promptStrats()
     
-    for i in 0...Game.roundCount {
+    for i in 0...Game.roundCount - 1 {
         Game.playRound()
     }
     Game.endGame()
