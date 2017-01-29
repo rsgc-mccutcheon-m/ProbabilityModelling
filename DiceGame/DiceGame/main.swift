@@ -10,45 +10,39 @@ import Foundation
 
 
 //MARK: GameBoard Class Init
-var Game  = DiceGame()
+var Game  = DiceGame() //create an instance of the game to be played
 var mode : Bool
 
-mode = Game.promptPlay()!
 
-if mode {
-    Game.getCount()
-    Game.players = Game.inputPlayerPicks()
-    Game.playRound()
+//MARK: Begin normal play
+mode = Game.promptPlay()! // decide if the player would like to play a game, or test strats (True=Game, False=strats)
+
+if mode { //the player has decided to play a game
+    Game.getCount() //get the desired number of players
+    Game.players = Game.inputPlayerPicks() //get the number picks and playewr name of each player, and create an array of players of type player.
+    Game.playRound()  //get a roll, test it against everyones boards, repeat 5x, check who won
     
-    while (Game.promptRound()) {
-        for Player in Game.players {
+    while (Game.promptRound()) { //check if another round is desired
+        for Player in Game.players { //get new number picks
             Player.refresh(picks: Game.getPicks(name: Player.name))
         }
-        Game.playRound()
+        Game.playRound() //get a roll, test it against everyones boards, repeat 5x, check who won
     }
     
-    Game.endGame()
+    Game.endGame() //exit and print overall winner
+    
+    
+    //MARK: Begin Strats Testing
 } else{
     
-    Game.promptStrats()
+    Game.promptStrats() //get ID and numbers for each board to be run, and number of iterations to test (1-300)
     
-    for i in 0...Game.roundCount - 1 {
-        Game.playRound()
+    for i in 0...Game.roundCount - 1 { //run for the input number of iterations
+        Game.playRound() //get a roll, test it against everyones boards, repeat 5x, check who won
     }
-    Game.endGame()
+    Game.endGame() //exit and print overall winner
 }
 
-
-//MARK: Global Input Variables
-
-
-
-//MARK: Global Objects
-
-//holds each of the player scorecards, which track wins, picks, and round scoring info
-
-//MARK: Game Setup
-//call the function that handles the gameboard initialization process. Returns an array of initialized gameboards.
 
 
 
